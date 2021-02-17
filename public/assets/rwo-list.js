@@ -1,7 +1,13 @@
 $(document).ready(function () {
   $("form").on("submit", function () {
-    var item = $("form input")
-    var todo = { item: item.val() }
+    let user = $("#user")
+    let date = $("#date")
+    let personNumber = $("#personNumber")
+    let todo = {
+      user: user.val(),
+      date: date.val(),
+      personNumber: personNumber.val(),
+    }
 
     $.ajax({
       type: "POST",
@@ -16,10 +22,10 @@ $(document).ready(function () {
   })
 
   $("li").on("click", function () {
-    var item = $(this).attr("id")
+    let user = $(this).attr("id")
     $.ajax({
       type: "DELETE",
-      url: "/rwo/" + item,
+      url: "/rwo/" + user,
       success: function (data) {
         location.reload()
       },

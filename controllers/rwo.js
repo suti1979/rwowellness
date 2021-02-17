@@ -13,8 +13,9 @@ mongoose.connect(
 
 //crate schema
 const todoSchema = new mongoose.Schema({
-  item: String,
-  updated: { type: Date, default: Date.now },
+  user: String,
+  date: { type: Date, default: Date.now },
+  personNumber: { type: Number, min: 1, max: 9, default: 1 },
 })
 
 const Todo = mongoose.model("Todo", todoSchema)
@@ -25,7 +26,6 @@ module.exports = (app) => {
   app.get("/rwo", (req, res) => {
     //get data from mongodb
     Todo.find({}, (err, data) => {
-      //{} all item or {item: 'XXX'}
       if (err) throw err
       res.render("rwo", { todos: data })
     })
@@ -40,9 +40,9 @@ module.exports = (app) => {
     })
   })
 
-  app.delete("/rwo/:item", (req, res) => {
+  app.delete("/rwo/:user", (req, res) => {
     // delete requestred item from mongodb
-    Todo.find({ _id: req.params.item }).deleteOne((err, data) => {
+    Todo.find({ _id: req.params.user }).deleteOne((err, data) => {
       if (err) throw err
       res.json({ todos: data })
     })

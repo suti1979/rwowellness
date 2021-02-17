@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RWO WELLNESS időpont foglalás</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="/assets/todo-list.js"></script>
+    <script src="/assets/rwo-list.js"></script>
     <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="todo-table">
+    <h1>RWO WELLNESS időpont foglalás</h1>
+    <div id="rwo-table">
       <form>
-        <input type="text" name="item" placeholder="Add new item..." required />
+        <input type="text" id="user" placeholder="Név / albetét" required />
+        <input type="datetime-local" id="date" required />
+        <label for="personNumber">Létszám:</label>
+        <input
+          value="1"
+          type="number"
+          id="personNumber"
+          name="quantity"
+          min="1"
+          max="9"
+        />
         <button type="submit">Foglalás</button>
       </form>
       <ul>
         <% for (let i = 0; i < todos.length; i++) { %>
         <li id="<%= todos[i]._id %>">
-          <%= todos[i].item %> - <%= todos[i].updated %>
+          Név/albetét: <%= todos[i].user %>, Dátum: <%= todos[i].date %>,
+          Létszám: <%= todos[i].personNumber %>
         </li>
         <% } %>
       </ul>
