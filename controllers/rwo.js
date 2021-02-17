@@ -5,6 +5,9 @@ const config = require("config")
 const dbName = config.get("Database.name")
 const dbPsw = config.get("Database.password")
 
+let dateShow = new Date()
+dateShow.setDate(dateShow.getDate() - 2)
+
 //Connect ot database
 mongoose.connect(
   `mongodb+srv://${dbName}:${dbPsw}@cluster0.vpjd4.mongodb.net/<dbname>?retryWrites=true&w=majority`,
@@ -25,10 +28,12 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 module.exports = (app) => {
   app.get("/rwo", (req, res) => {
     //get data from mongodb
-    Todo.find({}, (err, data) => {
-      if (err) throw err
-      res.render("rwo", { todos: data })
-    })
+    Todo.find({ date: { $gt: dateShow } }) //greater than $gt
+      .sort({ date: "asc" })
+      .exec((err, data) => {
+        if (err) throw err
+        res.render("rwo", { todos: data })
+      })
   })
 
   app.post("/rwo", urlencodedParser, (req, res) => {

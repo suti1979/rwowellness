@@ -24,13 +24,17 @@ $(document).ready(function () {
   })
 
   $("li").on("click", function () {
-    let user = $(this).attr("id")
-    $.ajax({
-      type: "DELETE",
-      url: "/rwo/" + user,
-      success: function (data) {
-        location.reload()
-      },
-    })
+    if (confirm("Törölni zseretné a bejegyzést?")) {
+      let user = $(this).attr("id")
+      $.ajax({
+        type: "DELETE",
+        url: "/rwo/" + user,
+        success: function (data) {
+          location.reload()
+        },
+      })
+    } else {
+      // Do nothing!
+    }
   })
 })
