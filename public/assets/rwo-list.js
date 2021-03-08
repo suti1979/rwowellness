@@ -1,10 +1,7 @@
 $(document).ready(function () {
-  // TODO -> $("#date").val(new Date())
-
   $("form").on("submit", function () {
     let user = $("#user")
     let date = $("#date")
-
     let personNumber = $("#personNumber")
     let todo = {
       user: user.val(),

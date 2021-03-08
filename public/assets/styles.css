@@ -17,7 +17,8 @@ h1 {
   box-sizing: border-box;
 }
 
-input {
+input,
+select {
   text-align: center;
   width: 80%;
   display: block;
@@ -30,7 +31,13 @@ input {
   transition: background-color 0.5s;
 }
 
-input:hover {
+select {
+  display: inline;
+  width: 24%;
+}
+
+input,
+select:hover {
   background-color: rgb(67, 173, 67, 0.5);
   color: white;
 }

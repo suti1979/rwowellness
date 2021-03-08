@@ -122,7 +122,7 @@ function daysInMonth(year, month) {
 
 function saveDate(date) {
   $("#date").val(date)
-  console.log(date)
+  //console.log(date)
 }
 
 // year.dataset.year = date.getFullYear()
