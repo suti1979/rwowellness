@@ -6,6 +6,7 @@
     <title>RWO WELLNESS időpont foglalás</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" defer></script>
     <script src="/assets/rwo-list.js" defer></script>
+    <script src="/assets/dateselect.js" defer></script>
     <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
     <!-- jquery.datetimepicker.full.js -->
   </head>
@@ -14,9 +15,12 @@
     <div id="rwo-table">
       <form>
         <input type="text" id="user" placeholder="Név / albetét" required />
-        <input type="date" id="date" placeholder="éééé. hh. nn." required />
-        <input type="time" id="time" placeholder="óó:pp" required />
-        <div id="picker"></div>
+        <input type="hidden" id="date" />
+        <select type="number" id="year"></select>
+        <select type="number" id="month"></select>
+        <select type="number" id="day"></select>
+        <select type="number" id="hour"></select>
+        <select type="number" id="minute"></select>
         <input
           placeholder="létszám"
           type="number"

@@ -4,11 +4,11 @@ $(document).ready(function () {
   $("form").on("submit", function () {
     let user = $("#user")
     let date = $("#date")
-    let time = $("#time")
+
     let personNumber = $("#personNumber")
     let todo = {
       user: user.val(),
-      date: date.val() + time.val(),
+      date: date.val(),
       personNumber: personNumber.val(),
     }
 
