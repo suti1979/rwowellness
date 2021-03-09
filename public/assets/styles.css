@@ -1,63 +1,82 @@
+* {
+  -webkit-appearance: none; /* remove safari webkit */
+  color: #dedede;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #dedede;
+  opacity: 1; /* Firefox */
+}
+
 body {
-  background: #0d1521;
+  background: #223c63;
   font-family: tahoma;
-  color: #989898;
 }
 
 h1 {
   text-align: center;
+  margin: 10px;
 }
 
 #rwo-table {
   position: relative;
-  width: 90%;
-  background: #090d13;
+  max-width: 900px;
+  background: #1b2f4d;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
 }
 
+.time {
+  text-align: center;
+  width: 100%;
+}
+
 input,
 select {
   text-align: center;
-  width: 80%;
+  width: 90%;
   display: block;
   padding: 14px;
   margin: 0 auto 4px;
-  background: #181c22;
+  background-color: #222a37;
   border: 0;
-  font-size: 20px;
-  color: #989898;
+  font-size: 16px;
   transition: background-color 0.5s;
 }
 
 select {
   display: inline;
-  width: 24%;
+  width: 30%;
+  font-size: 16px;
 }
 
-input,
+input:hover,
 select:hover {
-  background-color: rgb(67, 173, 67, 0.5);
-  color: white;
+  background-color: rgb(67, 173, 67);
 }
 
 button {
   display: block;
   margin: 0 auto 4px;
   padding: 14px;
-  width: 40%;
+  width: 30%;
   background: #23282e;
   border: 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   transition: background-color 0.5s;
 }
 
 button:hover {
-  background-color: rgb(67, 173, 67, 0.5);
+  background-color: rgb(67, 173, 67);
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 ul {

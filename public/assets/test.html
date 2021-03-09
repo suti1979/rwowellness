@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RWO WELLNESS időpont foglalás</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" defer></script>
-    <script src="/assets/rwo-list.js" defer></script>
-    <script src="/assets/dateselect.js" defer></script>
-    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
-    <!-- jquery.datetimepicker.full.js -->
+
+    <script src="dateselect.js" defer></script>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <h1>RWO WELLNESS</h1>
@@ -40,17 +39,7 @@
         <button type="submit">Foglalás</button>
       </form>
       <hr />
-      <ul>
-        <% for (let i = 0; i < todos.length; i++) { %>
-        <li id="<%= todos[i]._id %>">
-          Név / albetét:
-          <span class="highlight"><%= todos[i].user %></span>
-          | <%= todos[i].date.toLocaleString('hu-HU', {year: "numeric", month :
-          "2-digit", day : "2-digit", hour:"2-digit", minute:"2-digit"}) %><br />
-          Létszám: <%= todos[i].personNumber %>
-        </li>
-        <% } %>
-      </ul>
+      <ul></ul>
     </div>
   </body>
 </html>

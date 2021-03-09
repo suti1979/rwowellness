@@ -22,7 +22,7 @@ $(document).ready(function () {
   })
 
   $("li").on("click", function () {
-    if (confirm("Törölni zseretné a bejegyzést?")) {
+    if (confirm("Törölni szeretné a bejegyzést?")) {
       let user = $(this).attr("id")
       $.ajax({
         type: "DELETE",
