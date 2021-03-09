@@ -1,6 +1,7 @@
 * {
   -webkit-appearance: none; /* remove safari webkit */
   color: #dedede;
+  border-radius: 10px;
 }
 
 ::placeholder {
@@ -24,7 +25,7 @@ h1 {
   max-width: 900px;
   background: #1b2f4d;
   margin: 0 auto;
-  padding: 20px;
+  padding: 14px;
   box-sizing: border-box;
 }
 
@@ -48,7 +49,7 @@ select {
 
 select {
   display: inline;
-  width: 30%;
+  width: 31%;
   font-size: 16px;
 }
 
@@ -79,6 +80,13 @@ button:hover {
   pointer-events: none;
 }
 
+hr {
+  margin: 20px auto 4px;
+  width: 90%;
+  border: 10px solid #223c63;
+  border-radius: 5px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -86,7 +94,8 @@ ul {
 }
 
 li {
-  width: 100%;
+  width: 90%;
+  margin: 20px auto 4px;
   padding: 20px;
   box-sizing: border-box;
   font-family: arial;
