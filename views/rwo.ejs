@@ -14,7 +14,13 @@
     <h1>időpont foglalás</h1>
     <div id="rwo-table">
       <form>
-        <input type="text" id="user" placeholder="Név / albetét" required />
+        <input
+          type="text"
+          id="user"
+          placeholder="Név / albetét"
+          maxlength="30"
+          required
+        />
         <div class="time">
           <input type="hidden" id="date" />
           <select type="number" id="year"></select>
@@ -42,9 +48,8 @@
       <ul>
         <% for (let i = 0; i < todos.length; i++) { %>
         <li id="<%= todos[i]._id %>">
-          Név / albetét:
-          <span class="highlight"><%= todos[i].user %></span>
-          | <%= todos[i].date.toLocaleString('hu-HU', {year: "numeric", month :
+          Név / albetét: <%= todos[i].user %><br />
+          <%= todos[i].date.toLocaleString('hu-HU', {year: "numeric", month :
           "2-digit", day : "2-digit", hour:"2-digit", minute:"2-digit"}) %><br />
           Létszám: <%= todos[i].personNumber %>
         </li>

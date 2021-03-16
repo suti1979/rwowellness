@@ -62,7 +62,7 @@ function daysWrite() {
 daysWrite()
 
 // current hour
-for (let i = 1; i <= 24; i++) {
+for (let i = 1; i <= 23; i++) {
   let e = document.createElement("option")
   e.value = i
   e.innerHTML = i
