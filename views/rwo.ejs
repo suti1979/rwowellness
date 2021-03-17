@@ -17,40 +17,52 @@
         <input
           type="text"
           id="user"
-          placeholder="Név / albetét"
+          placeholder="Név vagy albetét szám"
           maxlength="30"
           required
         />
         <div class="time">
           <input type="hidden" id="date" />
-          <select type="number" id="year"></select>
-          <select type="number" id="month"></select>
-          <select type="number" id="day"></select>
-
+          <select id="year"></select>
+          <select id="month"></select>
+          <select id="day"></select>
           <select class="disabled" disabled>
             <option value="">Időpont</option>
           </select>
-          <select type="number" id="hour"></select>
-          <select type="number" id="minute"></select>
+          <select id="hour"></select>
+          <select id="minute"></select>
         </div>
+        <input
+          id="duration"
+          placeholder="várható időtartam (perc)"
+          type="range"
+          title="várható időtartam (perc)"
+          min="10"
+          value="60"
+          max="110"
+          step="10"
+          required
+        />
+        <div id="dur">Várható időtartam: 60 perc</div>
         <input
           placeholder="létszám"
           type="number"
           id="personNumber"
-          title=" - LÉTSZÁM -"
+          title="LÉTSZÁM"
           min="1"
           max="9"
           required
         />
-        <button type="submit">Foglalás</button>
+        <button type="submit">Időpont foglalás</button>
       </form>
       <hr />
       <ul>
         <% for (let i = 0; i < todos.length; i++) { %>
         <li id="<%= todos[i]._id %>">
-          Név / albetét: <%= todos[i].user %><br />
-          <%= todos[i].date.toLocaleString('hu-HU', {year: "numeric", month :
-          "2-digit", day : "2-digit", hour:"2-digit", minute:"2-digit"}) %><br />
+          Név: <%= todos[i].user %><br />
+          Időpont: <%= todos[i].date.toLocaleString('hu-HU', {year: "numeric",
+          month : "2-digit", day : "2-digit", hour:"2-digit", minute:"2-digit"})
+          %><br />
           Létszám: <%= todos[i].personNumber %>
         </li>
         <% } %>

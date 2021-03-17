@@ -34,6 +34,15 @@ h1 {
   width: 100%;
 }
 
+#dur {
+  text-align: center;
+  background-color: #222a37;
+  margin: 0 auto 4px;
+  padding-bottom: 4px;
+  width: 70%;
+  border-radius: 0 0 10px 10px;
+}
+
 input,
 select {
   text-align: center;
@@ -43,14 +52,17 @@ select {
   margin: 0 auto 4px;
   background-color: #222a37;
   border: 0;
-  font-size: 16px;
+  font-size: 1rem;
   transition: background-color 0.5s;
 }
 
 select {
   display: inline;
   width: 31%;
-  font-size: 16px;
+}
+
+option {
+  text-align: center;
 }
 
 input:hover,
@@ -58,17 +70,25 @@ select:hover {
   background-color: rgb(67, 173, 67);
 }
 
+#duration { 
+  margin-bottom: 0;
+}
+
+#personNumber {
+  width: 30%;
+}
+
 button {
   display: block;
-  margin: 0 auto 4px;
+  margin: 10px auto 4px;
   padding: 14px;
-  width: 30%;
-  background: #23282e;
+  width: 90%;
+  background: #223c63;
   border: 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   transition: background-color 0.5s;
 }
 
@@ -81,10 +101,10 @@ button:hover {
 }
 
 hr {
-  margin: 20px auto 4px;
-  width: 90%;
-  border: 10px solid #223c63;
-  border-radius: 5px;
+  margin-top: 8px;
+  padding: 0; 
+  border: 6px solid #223c63;
+  border-radius: 4px;
 }
 
 ul {
@@ -94,12 +114,12 @@ ul {
 }
 
 li {
-  width: 90%;
-  margin: 20px auto 4px;
-  padding: 20px;
+  width: 100%;
+  margin: 10px auto 4px;
+  padding: 10px;
   box-sizing: border-box;
   font-family: arial;
-  font-size: 20px;
+  font-size: 1rem;
   cursor: pointer;
   letter-spacing: 1px;
 }

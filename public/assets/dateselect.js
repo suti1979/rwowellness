@@ -78,7 +78,6 @@ for (let i = 0; i <= 5; i++) {
   let min = i * 10
   e.value = min // only every 10 minutes
   e.innerHTML = min
-  //!!!!!!!!!! not gooooood
   if (!selectMinute && min > date.getMinutes() - 10) {
     date.setMinutes(min)
     e.selected = min
@@ -124,5 +123,9 @@ function saveDate(date) {
   $("#date").val(date)
   //console.log(date)
 }
+
+$("#duration").change(() => {
+  $("#dur").text("Várható időtartam: " + $("#duration").val() + " perc")
+})
 
 // year.dataset.year = date.getFullYear()
