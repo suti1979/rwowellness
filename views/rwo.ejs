@@ -21,25 +21,36 @@
           maxlength="30"
           required
         />
-        <div class="time">
-          <input type="hidden" id="date" />
-          <select id="year"></select>
-          <select id="month"></select>
-          <select id="day"></select>
-          <select class="disabled" disabled>
-            <option value="">Időpont</option>
-          </select>
-          <select id="hour"></select>
-          <select id="minute"></select>
-        </div>
+
+        <input type="hidden" id="date" />
+
+        <table>
+          <tr>
+            <td><select id="year"></select></td>
+            <td><select id="month"></select></td>
+            <td><select id="day"></select></td>
+          </tr>
+          <tr>
+            <td>
+              <select class="disabled" disabled>
+                <option value="">Időpont</option>
+              </select>
+            </td>
+            <td>
+              <select id="hour"></select
+              ></td>
+            </td>
+            <td><select id="minute"></select></td>
+          </tr>
+        </table>
+
         <input
           id="duration"
-          placeholder="várható időtartam (perc)"
           type="range"
           title="várható időtartam (perc)"
-          min="10"
+          min="0"
           value="60"
-          max="110"
+          max="120"
           step="10"
           required
         />
@@ -63,6 +74,7 @@
           Időpont: <%= todos[i].date.toLocaleString('hu-HU', {year: "numeric",
           month : "2-digit", day : "2-digit", hour:"2-digit", minute:"2-digit"})
           %><br />
+          Várható időtartam: <%= todos[i].duration %> perc<br />
           Létszám: <%= todos[i].personNumber %>
         </li>
         <% } %>

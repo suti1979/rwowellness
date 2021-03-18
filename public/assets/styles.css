@@ -1,7 +1,6 @@
 * {
   -webkit-appearance: none; /* remove safari webkit */
   color: #dedede;
-  border-radius: 10px;
 }
 
 ::placeholder {
@@ -27,11 +26,7 @@ h1 {
   margin: 0 auto;
   padding: 14px;
   box-sizing: border-box;
-}
-
-.time {
-  text-align: center;
-  width: 100%;
+  border-radius: 10px;
 }
 
 #dur {
@@ -39,30 +34,35 @@ h1 {
   background-color: #222a37;
   margin: 0 auto 4px;
   padding-bottom: 4px;
-  width: 70%;
-  border-radius: 0 0 10px 10px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
 }
 
 input,
 select {
   text-align: center;
-  width: 90%;
+  width: 100%;
   display: block;
-  padding: 14px;
+  padding: 10px 0 10px 0;
   margin: 0 auto 4px;
   background-color: #222a37;
   border: 0;
   font-size: 1rem;
-  transition: background-color 0.5s;
+  transition: background-color 0.4s;
 }
 
 select {
   display: inline;
-  width: 31%;
-}
-
-option {
+  width: 100%;
+  padding-left: 6px;
   text-align: center;
+  text-align-last: center;
+  -moz-text-align-last: center;
+  -webkit-text-align-last: center;
 }
 
 input:hover,
@@ -70,7 +70,7 @@ select:hover {
   background-color: rgb(67, 173, 67);
 }
 
-#duration { 
+#duration {
   margin-bottom: 0;
 }
 
@@ -82,14 +82,14 @@ button {
   display: block;
   margin: 10px auto 4px;
   padding: 14px;
-  width: 90%;
+  width: 100%;
   background: #223c63;
   border: 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.5s;
+  transition: background-color 0.4s;
 }
 
 button:hover {
@@ -102,7 +102,7 @@ button:hover {
 
 hr {
   margin-top: 8px;
-  padding: 0; 
+  padding: 0;
   border: 6px solid #223c63;
   border-radius: 4px;
 }

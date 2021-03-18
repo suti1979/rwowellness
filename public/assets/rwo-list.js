@@ -3,10 +3,12 @@ $(document).ready(function () {
     let user = $("#user")
     let date = $("#date")
     let personNumber = $("#personNumber")
+    let duration = $("#duration")
     let todo = {
       user: user.val(),
       date: date.val(),
       personNumber: personNumber.val(),
+      duration: duration.val(),
     }
 
     $.ajax({
