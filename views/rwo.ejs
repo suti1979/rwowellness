@@ -14,17 +14,21 @@
     <h1>időpont foglalás</h1>
     <div id="rwo-table">
       <form>
-        <input
-          type="text"
-          id="user"
-          placeholder="Név vagy albetét szám"
-          maxlength="30"
-          required
-        />
+       
 
         <input type="hidden" id="date" />
 
         <table>
+          <tr>
+            <td colspan="3">
+              <input
+              type="text"
+              id="user"
+              placeholder="Név vagy albetét szám"
+              maxlength="30"
+              required
+            /></td>
+          </tr>
           <tr>
             <td><select id="year"></select></td>
             <td><select id="month"></select></td>
@@ -42,28 +46,43 @@
             </td>
             <td><select id="minute"></select></td>
           </tr>
+          <tr>
+            <td colspan="3">
+              <input
+                id="duration"
+                type="range"
+                title="várható időtartam (perc)"
+                min="0"
+                value="60"
+                max="120"
+                step="10"
+                required
+            />
+            <div id="dur">Várható időtartam: 60 perc</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            </td>
+            <td>
+              <input
+                placeholder="létszám"
+                type="number"
+                id="personNumber"
+                title="LÉTSZÁM"
+                min="1"
+                max="9"
+                required
+              />
+            </td>
+            <td>
+            </td>
+          </tr>
+
         </table>
 
-        <input
-          id="duration"
-          type="range"
-          title="várható időtartam (perc)"
-          min="0"
-          value="60"
-          max="120"
-          step="10"
-          required
-        />
-        <div id="dur">Várható időtartam: 60 perc</div>
-        <input
-          placeholder="létszám"
-          type="number"
-          id="personNumber"
-          title="LÉTSZÁM"
-          min="1"
-          max="9"
-          required
-        />
+        
+      
         <button type="submit">Időpont foglalás</button>
       </form>
       <hr />
