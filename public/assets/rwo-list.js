@@ -4,11 +4,13 @@ $(document).ready(function () {
     let date = $("#date")
     let personNumber = $("#personNumber")
     let duration = $("#duration")
+    let locale = $("#locale")
     let todo = {
       user: user.val(),
       date: date.val(),
       personNumber: personNumber.val(),
       duration: duration.val(),
+      locale: locale.val(),
     }
 
     $.ajax({

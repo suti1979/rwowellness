@@ -6,8 +6,7 @@ const dbName = config.get("Database.name")
 const dbPsw = config.get("Database.password")
 
 let dateShow = new Date()
-dateShow.setDate(dateShow.getDate() - 2)
-console.log(`check date -2: ${dateShow}`)
+dateShow.setDate(dateShow.getDate() - 1)
 
 //Connect ot database
 mongoose.connect(
@@ -21,6 +20,7 @@ const todoSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
   personNumber: { type: Number, min: 1, max: 9, default: 1 },
   duration: { type: Number, min: 0, max: 120, default: 60 },
+  locale: String,
 })
 
 const Todo = mongoose.model("Todo", todoSchema)

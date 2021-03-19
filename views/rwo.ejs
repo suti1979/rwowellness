@@ -1,103 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RWO WELLNESS időpont foglalás</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" defer></script>
-    <script src="/assets/rwo-list.js" defer></script>
-    <script src="/assets/dateselect.js" defer></script>
-    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <h1>RWO WELLNESS</h1>
-    <h1>időpont foglalás</h1>
-    <div id="rwo-table">
-      <form>
-       
-
-        <input type="hidden" id="date" />
-
-        <table>
-          <tr>
-            <td colspan="3">
-              <input
-              type="text"
-              id="user"
-              placeholder="Név vagy albetét szám"
-              maxlength="30"
-              required
-            /></td>
-          </tr>
-          <tr>
-            <td><select id="year"></select></td>
-            <td><select id="month"></select></td>
-            <td><select id="day"></select></td>
-          </tr>
-          <tr>
-            <td>
-              <select class="disabled" disabled>
-                <option value="">Időpont</option>
-              </select>
-            </td>
-            <td>
-              <select id="hour"></select
-              ></td>
-            </td>
-            <td><select id="minute"></select></td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <input
-                id="duration"
-                type="range"
-                title="várható időtartam (perc)"
-                min="0"
-                value="60"
-                max="120"
-                step="10"
-                required
-            />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RWO WELLNESS időpont foglalás</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" defer></script>
+  <script src="/assets/rwo-list.js" defer></script>
+  <script src="/assets/dateselect.js" defer></script>
+  <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1>RWO</h1>
+  <h1>időpont jelzés</h1>
+  <div id="rwo-table">
+    <form>
+      <input type="hidden" id="date" />
+      <input type="hidden" id="locale" value="WELLNESS" />
+      <table>
+        <tr>
+          <td colspan="3">
+            <input type="text" id="user" placeholder="Név vagy albetét szám" maxlength="30" required />
+          </td>
+        </tr>
+        <tr>
+          <td><select id="year"></select></td>
+          <td><select id="month"></select></td>
+          <td><select id="day"></select></td>
+        </tr>
+        <tr>
+          <td>
+            <select class="disabled" disabled>
+              <option value="">Időpont</option>
+            </select>
+          </td>
+          <td>
+            <select id="hour"></select>
+          </td>
+          </td>
+          <td><select id="minute"></select></td>
+        </tr>
+        <tr>
+          <td>
+            <select class="disabled" disabled>
+              <option value="">Hely</option>
+            </select>
+          </td>
+          <td>
+            <button class="pickone active" value="WELLNESS">Wellness</button>
+          </td>
+          <td>
+            <button class="pickone" value="FITNESS">Fitness</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input id="duration" type="range" title="várható időtartam (perc)" min="0" value="60" max="120" step="10"
+              required />
             <div id="dur">Várható időtartam: 60 perc</div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-            </td>
-            <td>
-              <input
-                placeholder="létszám"
-                type="number"
-                id="personNumber"
-                title="LÉTSZÁM"
-                min="1"
-                max="9"
-                required
-              />
-            </td>
-            <td>
-            </td>
-          </tr>
-
-        </table>
-
-        
-      
-        <button type="submit">Időpont foglalás</button>
-      </form>
-      <hr />
-      <ul>
-        <% for (let i = 0; i < todos.length; i++) { %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <input placeholder="létszám" type="number" id="personNumber" title="LÉTSZÁM" min="1" max="9" required />
+          </td>
+          <td>
+          </td>
+        </tr>
+      </table>
+      <button type="submit">Időpont jelzés</button>
+    </form>
+    <hr />
+    <ul>
+      <% for (let i=0; i < todos.length; i++) { %>
         <li id="<%= todos[i]._id %>">
           Név: <%= todos[i].user %><br />
-          Időpont: <%= todos[i].date.toLocaleString('hu-HU', {year: "numeric",
-          month : "2-digit", day : "2-digit", hour:"2-digit", minute:"2-digit"})
-          %><br />
-          Várható időtartam: <%= todos[i].duration %> perc<br />
-          Létszám: <%= todos[i].personNumber %>
+            Időpont: <%= todos[i].date.toLocaleString('hu-HU', {year: "numeric" , month : "2-digit" , day : "2-digit" ,
+              hour:"2-digit", minute:"2-digit"}) %><br />
+              Hely: <%= todos[i].locale %><br />
+              Várható időtartam: <%= todos[i].duration %> perc<br />
+              Létszám: <%= todos[i].personNumber %>
         </li>
         <% } %>
-      </ul>
-    </div>
-  </body>
+    </ul>
+  </div>
+  <h5><a href="https://github.com/suti1979/rwowellness/blob/main/README.md" target="_blank">
+      Copyright (c) 2021 - ledurts.hu - MIT Licence</a>
+  </h5>
+</body>
 </html>

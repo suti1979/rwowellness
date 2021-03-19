@@ -128,4 +128,12 @@ $("#duration").change(() => {
   $("#dur").text("Várható időtartam: " + $("#duration").val() + " perc")
 })
 
+//toggle options
+let $pickone = $(".pickone").click(function (e) {
+  e.preventDefault()
+  if (e.target !== this) return null
+  $pickone.not(this).removeClass("active")
+  $(this).toggleClass("active")
+  $("#locale").val($(this).val())
+})
 // year.dataset.year = date.getFullYear()
