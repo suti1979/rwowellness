@@ -5,6 +5,7 @@ $(document).ready(function () {
     let personNumber = $("#personNumber")
     let duration = $("#duration")
     let locale = $("#locale")
+
     let todo = {
       user: user.val(),
       date: date.val(),
